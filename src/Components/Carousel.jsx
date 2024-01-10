@@ -12,16 +12,16 @@ const Carousel = ({ queryParam, title }) => {
 
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [movies]);
 
   const fetchMovies = async () => {
     try {
       let resp = await fetch("http://www.omdbapi.com/?apikey=c349cfd&s=" + queryParam);
       if (resp.ok) {
-        let movies = await resp.json();
+        let fetchedMovies = await resp.json();
         // salvare nello state il nostro array data
 
-        setMovies({ movies });
+        setMovies(fetchedMovies);
       }
     } catch (error) {
       console.log(error);

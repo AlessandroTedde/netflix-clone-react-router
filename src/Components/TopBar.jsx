@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import TopBarRight from "./TopBarRight";
+import { Link } from "react-router-dom";
 
 const TopBar = ({ source }) => {
   return (
@@ -11,21 +12,18 @@ const TopBar = ({ source }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="text-light" href="#home">
+            <Link className="text-light nav-link" to={"/"}>
               Home
-            </Nav.Link>
-            <Nav.Link className="text-light" href="#link">
-              TV Shows
-            </Nav.Link>
-            <Nav.Link className="text-light" href="#link">
-              Movies
-            </Nav.Link>
-            <Nav.Link className="text-light" href="#link">
-              Recently Added
-            </Nav.Link>
-            <Nav.Link className="text-light" href="#link">
-              My List
-            </Nav.Link>
+            </Link>
+            <Link className="text-light nav-link" to={"trending-now"}>
+              Trending Now
+            </Link>
+            <Link className="text-light nav-link" to={"watch-it-again"}>
+              Watch It Again
+            </Link>
+            <Link className="text-light nav-link" to={"new-releases"}>
+              New Releases
+            </Link>
           </Nav>
           <span>
             <TopBarRight />
