@@ -7,6 +7,7 @@ import ActionBar from "./Components/ActionBar";
 import Carousel from "./Components/Carousel";
 import Footer from "./Components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieDetails from "./Components/MovieDetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="trending-now" element={<Carousel title="Trending Now" queryParam="superman" />} />
           <Route path="watch-it-again" element={<Carousel title="Watch It Again" queryParam="batman" />} />
           <Route path="new-releases" element={<Carousel title="New Releases" queryParam="aquaman" />} />
+          <Route path="/:movieId" element={<MovieDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>

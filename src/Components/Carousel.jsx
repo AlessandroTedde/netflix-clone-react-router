@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ queryParam, title }) => {
   // state = {
@@ -74,9 +75,17 @@ const Carousel = ({ queryParam, title }) => {
       <Slider {...settings}>
         {movies.Search &&
           movies.Search.map((movie) => (
-            <div className="m-0 p-0 images">
-              <img className="object-fit-cover w-100" src={movie.Poster} key={movie.imdbID} height={350} alt="cover" />
-            </div>
+            <Link to={`/${movie.imdbID}`}>
+              <div className="m-0 p-0 images">
+                <img
+                  className="object-fit-cover w-100"
+                  src={movie.Poster}
+                  key={movie.imdbID}
+                  height={350}
+                  alt="cover"
+                />
+              </div>
+            </Link>
           ))}
       </Slider>
     </div>
